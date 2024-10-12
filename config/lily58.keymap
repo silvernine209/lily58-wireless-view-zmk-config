@@ -13,21 +13,24 @@
         partial_screenshot: partial_screenshot {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_GUI &kp LEFT_SHIFT &kp S>;
+            bindings = <&macro_press>, <&kp LEFT_GUI &kp LEFT_SHIFT &kp S>;
+
             label = "PARTIAL_SCREENSHOT";
         };
 
         close_tab: close_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL &kp W>;
+            bindings = <&macro_press>, <&kp LEFT_CONTROL &kp W>;
+
             label = "CLOSE_TAB";
         };
 
         win_mic_input: win_mic_input {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_GUI &kp H>;
+            bindings = <&macro_press>, <&kp LEFT_GUI &kp H>;
+
             label = "WIN_MIC_INPUT";
         };
     };
