@@ -22,6 +22,15 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        L_KB_ENTER {
+            bindings = <&kp ENTER>;
+            key-positions = <24 53>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
