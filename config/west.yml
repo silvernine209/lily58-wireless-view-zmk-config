@@ -8,8 +8,6 @@ manifest:
       url-base: https://github.com/petejohanson
     - name: urob
       url-base: https://github.com/urob
-    - name: kata0510
-      url-base: https://github.com/kata0510
   projects:
     #
     # zmk fork
@@ -54,9 +52,5 @@ manifest:
     - name: kb_zmk_ps2_mouse_trackpoint_driver
       remote: infused-kim
       revision: main
-    - name: layouts
-      remote: kata0510
-      revision: main
-      path: layouts/kata0510
   self:
     path: config
