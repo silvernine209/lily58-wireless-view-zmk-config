@@ -59,6 +59,7 @@
 #endif  // HAS_MOUSE_TP
 
 / {
+    // Keymap configurations
     macros {
         partial_screenshot: partial_screenshot {
             compatible = "zmk,behavior-macro";
