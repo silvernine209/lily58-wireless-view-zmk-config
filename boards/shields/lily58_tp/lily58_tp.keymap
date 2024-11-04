@@ -10,11 +10,11 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 // Warning:
-// This is the keymap file under the `zmk-config/boards/shields/corne/`
+// This is the keymap file under the `zmk-config/boards/shields/lily58_tp`
 // directory.
 //
 // It's the default keymap that is only used if you don't have a custom one
-// in zmk-config/config/corne.keymap.
+// in zmk-config/config/lily58.keymap.
 //
 // Instead of making changes to this keymap, you should edit the config
 // mentioned above.
