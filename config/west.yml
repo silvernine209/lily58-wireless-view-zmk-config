@@ -54,5 +54,9 @@ manifest:
     - name: kb_zmk_ps2_mouse_trackpoint_driver
       remote: infused-kim
       revision: main
+    - name: layouts
+      remote: kata0510
+      revision: main
+      path: layouts/kata0510
   self:
     path: config
