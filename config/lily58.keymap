@@ -10,17 +10,6 @@
 
 / {
     macros {
-        partial_screenshot: partial_screenshot {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_GUI &kp LEFT_SHIFT &kp S>,
-                <&macro_release>;
-
-            label = "PARTIAL_SCREENSHOT";
-        };
-
         SKIP_WORD_RIGHT: SKIP_WORD_RIGHT {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -68,6 +57,17 @@
             label = "COLLAPSE_LEVEL";
         };
 
+        SCREENSHOT_COPY: SCREENSHOT_SAVE {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_COMMAND &kp LEFT_CONTROL &kp LEFT_SHIFT &kp NUMBER_4>,
+                <&macro_release>;
+
+            label = "SCREENSHOT_SAVE";
+        };
+
         SCREENSHOT_SAVE: SCREENSHOT_SAVE {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -95,11 +95,11 @@
 
             display-name = "Base";
             bindings = <
-&kp ESC                 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3      &kp NUMBER_4         &kp N5                                                                 &kp NUMBER_6                 &kp N7                &kp N8             &kp N9   &kp N0    &kp EQUAL
-&kp TAB                 &kp Q         &kp W         &kp E             &kp R                &kp T                                                                  &kp Y                        &kp U                 &kp I              &kp O    &kp P     &kp MINUS
-&mt LEFT_COMMAND ENTER  &kp A         &kp S         &kp D             &kp F                &kp G                                                                  &kp H                        &kp J                 &kp K              &kp L    &kp SEMI  &mt LEFT_COMMAND ENTER
-&kp LSHFT               &kp Z         &kp X         &kp C             &kp V                &kp B                       &lt 1 LEFT_BRACKET    &lt 1 RIGHT_BRACKET  &kp N                        &kp M                 &kp COMMA          &kp DOT  &kp FSLH  &kp RSHFT
-                                                    &kp LEFT_CONTROL  &mt LEFT_ALT DELETE  &mt LEFT_COMMAND BACKSPACE  &lt 2 SPACE           &lt 2 ENTER          &mt RIGHT_COMMAND BACKSPACE  &mt RIGHT_ALT DELETE  &kp RIGHT_CONTROL
+&kp ESC                 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3      &kp NUMBER_4  &kp N5                                                       &kp NUMBER_6       &kp N7         &kp N8     &kp N9   &kp N0    &kp EQUAL
+&kp TAB                 &kp Q         &kp W         &kp E             &kp R         &kp T                                                        &kp Y              &kp U          &kp I      &kp O    &kp P     &kp MINUS
+&mt LEFT_COMMAND ENTER  &kp A         &kp S         &kp D             &kp F         &kp G                                                        &kp H              &kp J          &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT               &kp Z         &kp X         &kp C             &kp V         &kp B             &lt 2 LEFT_BRACKET    &lt 2 RIGHT_BRACKET  &kp N              &kp M          &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+                                                    &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND  &kp SPACE             &lt 1 ENTER          &kp RIGHT_COMMAND  &kp BACKSPACE  &kp DEL
             >;
         };
 
@@ -113,11 +113,11 @@
 
             display-name = "Lower";
             bindings = <
-&trans  &trans  &trans           &trans          &SCREENSHOT_SAVE  &kp HOME                         &trans     &kp K_PREV       &kp C_PLAY      &kp K_FORWARD     &kp C_MUTE     &kp C_VOLUME_UP
-&trans  &trans  &SKIP_WORD_LEFT  &kp UP_ARROW    &SKIP_WORD_RIGHT  &kp PAGE_UP                      &trans     &SKIP_WORD_LEFT  &kp UP_ARROW    &SKIP_WORD_RIGHT  &trans         &kp C_VOLUME_DOWN
-&trans  &trans  &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW   &kp PAGE_DOWN                    &kp SQT    &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW   &trans         &trans
-&trans  &trans  &trans           &trans          &trans            &trans         &trans    &trans  &kp TILDE  &kp PIPE         &kp SEMICOLON   &kp COLON         &kp BACKSLASH  &trans
-                                 &trans          &trans            &trans         &trans    &trans  &trans     &trans           &trans
+&trans  &trans  &trans           &trans          &trans            &kp HOME                         &trans         &trans            &trans            &trans            &trans           &kp C_VOLUME_UP
+&trans  &trans  &SKIP_WORD_LEFT  &kp UP_ARROW    &SKIP_WORD_RIGHT  &kp PAGE_UP                      &trans         &SKIP_WORD_LEFT   &kp UP_ARROW      &SKIP_WORD_RIGHT  &trans           &kp C_VOLUME_DOWN
+&trans  &trans  &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW   &kp PAGE_DOWN                    &CODE_COMMENT  &kp LEFT_ARROW    &kp DOWN_ARROW    &kp RIGHT_ARROW   &COLLAPSE_LEVEL  &kp K_MUTE
+&trans  &trans  &trans           &trans          &trans            &trans         &trans    &trans  &trans         &SCREENSHOT_COPY  &SCREENSHOT_SAVE  &kp GRAVE         &kp BACKSLASH    &trans
+                                 &trans          &trans            &trans         &trans    &trans  &trans         &trans            &trans
             >;
         };
 
@@ -131,11 +131,11 @@
 
             display-name = "Raise";
             bindings = <
-&trans      &kp F1      &kp F2  &kp F3  &kp F4  &kp F5                        &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
-&bt BT_PRV  &bt BT_NXT  &trans  &trans  &trans  &bt BT_CLR                    &trans  &trans  &trans  &trans  &trans   &kp F12
-&trans      &trans      &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans   &trans
-&trans      &trans      &trans  &trans  &trans  &trans      &trans    &trans  &trans  &trans  &trans  &trans  &trans   &trans
-                                &trans  &trans  &trans      &trans    &trans  &trans  &trans  &trans
+&kp F1      &kp F2      &kp F3      &kp F4  &kp F5  &kp F6                        &kp F7  &kp F8  &kp F9  &kp F10  &kp F10  &kp F12
+&bt BT_PRV  &bt BT_NXT  &bt BT_CLR  &trans  &trans  &sys_reset                    &trans  &trans  &trans  &trans   &trans   &trans
+&trans      &trans      &trans      &trans  &trans  &trans                        &trans  &trans  &trans  &trans   &trans   &trans
+&trans      &trans      &trans      &trans  &trans  &trans      &trans    &trans  &trans  &trans  &trans  &trans   &trans   &trans
+                                    &trans  &trans  &trans      &trans    &trans  &trans  &trans  &trans
             >;
         };
     };
