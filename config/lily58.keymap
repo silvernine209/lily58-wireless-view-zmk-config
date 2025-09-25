@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     macros {
@@ -84,11 +85,11 @@
 
             display-name = "Base";
             bindings = <
-&kp ESC                 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3      &kp NUMBER_4  &kp N5                                                       &kp NUMBER_6       &kp N7         &kp N8     &kp N9   &kp N0    &kp EQUAL
-&kp TAB                 &kp Q         &kp W         &kp E             &kp R         &kp T                                                        &kp Y              &kp U          &kp I      &kp O    &kp P     &kp MINUS
-&mt LEFT_COMMAND ENTER  &kp A         &kp S         &kp D             &kp F         &kp G                                                        &kp H              &kp J          &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT               &kp Z         &kp X         &kp C             &kp V         &kp B             &lt 2 LEFT_BRACKET    &lt 2 RIGHT_BRACKET  &kp N              &kp M          &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                                                    &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND  &kp SPACE             &lt 1 ENTER          &kp RIGHT_COMMAND  &kp BACKSPACE  &kp DEL
+&kp ESC                 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3      &kp NUMBER_4  &kp N5                                                       &kp NUMBER_6       &kp N7         &kp N8             &kp N9   &kp N0    &kp EQUAL
+&kp TAB                 &kp Q         &kp W         &kp E             &kp R         &kp T                                                        &kp Y              &kp U          &kp I              &kp O    &kp P     &kp MINUS
+&mt LEFT_COMMAND ENTER  &kp A         &kp S         &kp D             &kp F         &kp G                                                        &kp H              &kp J          &kp K              &kp L    &kp SEMI  &kp SQT
+&kp LSHFT               &kp Z         &kp X         &kp C             &kp V         &kp B             &lt 2 LEFT_BRACKET    &lt 2 RIGHT_BRACKET  &kp N              &kp M          &kp COMMA          &kp DOT  &kp FSLH  &kp RSHFT
+                                                    &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND  &kp SPACE             &lt 1 ENTER          &kp RIGHT_COMMAND  &kp BACKSPACE  &mt LA(SPACE) DEL
             >;
         };
 
@@ -102,11 +103,11 @@
 
             display-name = "Lower";
             bindings = <
-&trans  &trans  &trans           &trans          &trans            &kp HOME                         &trans         &trans            &trans          &trans            &trans           &kp C_VOLUME_UP
-&trans  &trans  &SKIP_WORD_LEFT  &kp UP_ARROW    &SKIP_WORD_RIGHT  &kp PAGE_UP                      &trans         &SKIP_WORD_LEFT   &kp UP_ARROW    &SKIP_WORD_RIGHT  &trans           &kp C_VOLUME_DOWN
-&trans  &trans  &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW   &kp PAGE_DOWN                    &CODE_COMMENT  &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW   &COLLAPSE_LEVEL  &kp K_MUTE
-&trans  &trans  &trans           &trans          &trans            &trans         &trans    &trans  &trans         &SCREENSHOT_COPY  &trans          &kp GRAVE         &kp BACKSLASH    &trans
-                                 &trans          &trans            &trans         &trans    &trans  &trans         &trans            &trans
+&trans  &trans  &trans          &trans          &trans           &kp HOME                         &trans          &kp LS(LA(LEFT))  &msc SCRL_UP    &kp LS(LA(RIGHT))  &trans           &kp C_VOLUME_UP
+&trans  &trans  &kp LA(LEFT)    &kp UP_ARROW    &kp LA(RIGHT)    &kp PAGE_UP                      &trans          &kp LA(LEFT)      &kp UP_ARROW    &kp LA(RIGHT)      &trans           &kp C_VOLUME_DOWN
+&trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN                    &msc SCRL_LEFT  &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW    &msc SCRL_RIGHT  &kp K_MUTE
+&trans  &trans  &trans          &trans          &trans           &trans         &trans    &trans  &trans          &trans            &msc SCRL_DOWN  &kp GRAVE          &kp BACKSLASH    &trans
+                                &trans          &trans           &trans         &trans    &trans  &trans          &trans            &trans
             >;
         };
 
