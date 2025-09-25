@@ -67,17 +67,6 @@
 
             label = "SCREENSHOT_SAVE";
         };
-
-        SCREENSHOT_SAVE: SCREENSHOT_SAVE {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_COMMAND &kp LEFT_SHIFT &kp NUMBER_4>,
-                <&macro_release>;
-
-            label = "SCREENSHOT_SAVE";
-        };
     };
 
     combos { compatible = "zmk,combos"; };
@@ -113,10 +102,10 @@
 
             display-name = "Lower";
             bindings = <
-&trans  &trans  &trans           &trans          &trans            &kp HOME                         &trans         &trans            &trans            &trans            &trans           &kp C_VOLUME_UP
-&trans  &trans  &SKIP_WORD_LEFT  &kp UP_ARROW    &SKIP_WORD_RIGHT  &kp PAGE_UP                      &trans         &SKIP_WORD_LEFT   &kp UP_ARROW      &SKIP_WORD_RIGHT  &trans           &kp C_VOLUME_DOWN
-&trans  &trans  &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW   &kp PAGE_DOWN                    &CODE_COMMENT  &kp LEFT_ARROW    &kp DOWN_ARROW    &kp RIGHT_ARROW   &COLLAPSE_LEVEL  &kp K_MUTE
-&trans  &trans  &trans           &trans          &trans            &trans         &trans    &trans  &trans         &SCREENSHOT_COPY  &SCREENSHOT_SAVE  &kp GRAVE         &kp BACKSLASH    &trans
+&trans  &trans  &trans           &trans          &trans            &kp HOME                         &trans         &trans            &trans          &trans            &trans           &kp C_VOLUME_UP
+&trans  &trans  &SKIP_WORD_LEFT  &kp UP_ARROW    &SKIP_WORD_RIGHT  &kp PAGE_UP                      &trans         &SKIP_WORD_LEFT   &kp UP_ARROW    &SKIP_WORD_RIGHT  &trans           &kp C_VOLUME_DOWN
+&trans  &trans  &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW   &kp PAGE_DOWN                    &CODE_COMMENT  &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW   &COLLAPSE_LEVEL  &kp K_MUTE
+&trans  &trans  &trans           &trans          &trans            &trans         &trans    &trans  &trans         &SCREENSHOT_COPY  &trans          &kp GRAVE         &kp BACKSLASH    &trans
                                  &trans          &trans            &trans         &trans    &trans  &trans         &trans            &trans
             >;
         };
