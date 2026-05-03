@@ -132,10 +132,10 @@
 
             display-name = "Lower";
             bindings = <
-&trans  &trans  &trans          &trans          &trans           &kp HOME                         &trans           &kp LS(LA(LEFT))  &msc SCRL_DOWN  &kp LS(LA(RIGHT))  &trans          &kp C_VOLUME_UP
-&trans  &trans  &kp LA(LEFT)    &kp UP_ARROW    &kp LA(RIGHT)    &kp PAGE_UP                      &trans           &kp LA(LEFT)      &kp UP_ARROW    &kp LA(RIGHT)      &kp K_MUTE      &kp C_VOLUME_DOWN
-&trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN                    &msc SCRL_RIGHT  &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW    &msc SCRL_LEFT  &kp GRAVE
-&trans  &trans  &trans          &trans          &trans           &trans         &trans    &trans  &trans           &trans            &msc SCRL_UP    &trans             &kp BACKSLASH   &trans
+&trans  &trans  &trans          &trans          &trans           &kp HOME                         &trans           &kp LS(LA(LEFT))  &msc SCRL_DOWN  &kp LS(LA(RIGHT))  &kp C_BRIGHTNESS_INC  &kp C_VOLUME_UP
+&trans  &trans  &kp LA(LEFT)    &kp UP_ARROW    &kp LA(RIGHT)    &kp PAGE_UP                      &trans           &kp LA(LEFT)      &kp UP_ARROW    &kp LA(RIGHT)      &kp C_BRIGHTNESS_DEC  &kp C_VOLUME_DOWN
+&trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN                    &msc SCRL_RIGHT  &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW    &msc SCRL_LEFT        &kp GRAVE
+&trans  &trans  &trans          &trans          &trans           &trans         &trans    &trans  &trans           &trans            &msc SCRL_UP    &trans             &kp BACKSLASH         &trans
                                 &trans          &trans           &trans         &trans    &trans  &trans           &trans            &trans
             >;
         };
