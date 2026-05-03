@@ -11,30 +11,10 @@
 
 / {
     macros {
-        SKIP_WORD_RIGHT: SKIP_WORD_RIGHT {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&kp LA(RIGHT)>;
-
-            label = "SKIP_WORD_RIGHT";
-        };
-
-        SKIP_WORD_LEFT: SKIP_WORD_LEFT {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&kp LA(LEFT)>;
-
-            label = "SKIP_WORD_LEFT";
-        };
-
         CODE_COMMENT: CODE_COMMENT {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&kp LG(SLASH)>;
-
+            bindings = <&kp LG(SLASH)>;
             label = "CODE_COMMENT";
         };
 
@@ -54,27 +34,21 @@
         SCREENSHOT_COPY: SCREENSHOT_COPY {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&kp LG(LC(LS(NUMBER_4)))>;
-
+            bindings = <&kp LG(LC(LS(NUMBER_4)))>;
             label = "SCREENSHOT_COPY";
         };
 
         SCREENSHOT_SAVE: SCREENSHOT_SAVE {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&kp LG(LS(NUMBER_4))>;
-
+            bindings = <&kp LG(LS(NUMBER_4))>;
             label = "SCREENSHOT_SAVE";
         };
 
         CODE_VIEW_SPLIT: CODE_VIEW_SPLIT {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&kp LG(BACKSLASH)>;
-
+            bindings = <&kp LG(BACKSLASH)>;
             label = "CODE_VIEW_SPLIT";
         };
     };
