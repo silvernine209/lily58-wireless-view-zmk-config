@@ -5,7 +5,24 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      # PINNED to last commit before Zephyr 4.1 / HWMv2 migration (Dec 7, 2025).
+      #
+      # Why pinned:
+      #   On 2026-05-03 the build broke because ZMK main moved to Zephyr 4.1,
+      #   which renamed boards (nice_nano_v2 -> nice_nano//zmk). After updating
+      #   to the new board name, builds succeeded but the keyboard developed
+      #   bad battery drain (dies overnight) — likely a regression introduced
+      #   by the Zephyr 4.1 / HWMv2 migration. Pinning here restores the known-
+      #   good behavior we had for months.
+      #
+      # To try a newer ZMK in the future:
+      #   1. Change `revision` below to `main` (or a newer release tag).
+      #   2. In build.yaml, change board back to `nice_nano//zmk`.
+      #   3. Build, flash both halves, and test battery overnight.
+      #   4. If battery is still bad, revert these two changes.
+      #
+      # Reference: https://zmk.dev/blog/2025/12/09/zephyr-4-1
+      revision: abb64ba316c29caddc49727ca2cac2f0ed5970c7
       import: app/west.yml
   self:
     path: config

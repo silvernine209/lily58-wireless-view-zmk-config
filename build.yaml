@@ -12,10 +12,15 @@
 #     shield: reviung41
 #
 ---
+# Board name is `nice_nano_v2` (pre-Zephyr 4.1 naming).
+# This matches the pinned ZMK revision in config/west.yml.
+#
+# If you upgrade ZMK to a post-Zephyr 4.1 version (Dec 2025+), change
+# these to `nice_nano//zmk`. See config/west.yml for full upgrade notes.
 include:
-  - board: nice_nano//zmk
+  - board: nice_nano_v2
     shield: lily58_left nice_view_adapter nice_view
-  - board: nice_nano//zmk
+  - board: nice_nano_v2
     shield: lily58_right nice_view_adapter nice_view
-  - board: nice_nano//zmk
+  - board: nice_nano_v2
     shield: settings_reset
