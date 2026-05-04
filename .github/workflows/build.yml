@@ -2,4 +2,8 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    # Pinned to pre-Zephyr 4.1 commit (Dec 7, 2025).
+    # The workflow at @main uses the new Zephyr 4.1 toolchain which is
+    # incompatible with the pinned ZMK in config/west.yml. See west.yml
+    # for full upgrade notes — when upgrading, change this back to @main.
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@abb64ba316c29caddc49727ca2cac2f0ed5970c7
