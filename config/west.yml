@@ -5,24 +5,22 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      # PINNED to last commit before Zephyr 4.1 / HWMv2 migration (Dec 7, 2025).
+      # PINNED to a known ZMK main commit (2026-09-15, Zephyr 4.1 / HWMv2).
+      # Keep this SHA in sync with .github/workflows/build.yml, and keep the
+      # board in build.yaml as `nice_nano//zmk`.
       #
-      # Why pinned:
-      #   On 2026-05-03 the build broke because ZMK main moved to Zephyr 4.1,
-      #   which renamed boards (nice_nano_v2 -> nice_nano//zmk). After updating
-      #   to the new board name, builds succeeded but the keyboard developed
-      #   bad battery drain (dies overnight) — likely a regression introduced
-      #   by the Zephyr 4.1 / HWMv2 migration. Pinning here restores the known-
-      #   good behavior we had for months.
+      # History: on 2026-05-04 this was pinned to abb64ba (pre-Zephyr 4.1)
+      # because the Zephyr 4.1 build drained the battery overnight. That was
+      # ZMK issue #3207: the central half hangs in deep sleep when
+      # CONFIG_ZMK_SLEEP=y. It was fixed in ZMK's Zephyr fork on 2026-06-24
+      # and confirmed on the same Lily58 + nice!nano v2 + nice!view setup.
+      # https://github.com/zmkfirmware/zmk/issues/3207
       #
-      # To try a newer ZMK in the future:
-      #   1. Change `revision` below to `main` (or a newer release tag).
-      #   2. In build.yaml, change board back to `nice_nano//zmk`.
-      #   3. Build, flash both halves, and test battery overnight.
-      #   4. If battery is still bad, revert these two changes.
-      #
-      # Reference: https://zmk.dev/blog/2025/12/09/zephyr-4-1
-      revision: abb64ba316c29caddc49727ca2cac2f0ed5970c7
+      # If the battery drain comes back, roll back all three together:
+      #   1. revision below -> abb64ba316c29caddc49727ca2cac2f0ed5970c7
+      #   2. the workflow in .github/workflows/build.yml -> the same SHA
+      #   3. boards in build.yaml -> nice_nano_v2
+      revision: 9ebbeff0a8b69a42f14aec022cdf16c7a107b9e0
       import: app/west.yml
   self:
     path: config
