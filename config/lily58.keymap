@@ -26,7 +26,8 @@
                 <&kp LEFT_WIN>,
                 <&macro_tap>,
                 <&kp K>,
-                <&macro_release>;
+                <&macro_release>,
+                <&kp LEFT_WIN>;
 
             label = "COLLAPSE_LEVEL";
         };
@@ -111,7 +112,7 @@
 
             display-name = "Raise";
             bindings = <
-&kp F1      &kp F2      &kp F3      &kp F4  &kp F5  &kp F6                        &kp F7            &kp F8            &kp F9  &kp F10  &kp F10  &kp F12
+&kp F1      &kp F2      &kp F3      &kp F4  &kp F5  &kp F6                        &kp F7            &kp F8            &kp F9  &kp F10  &kp F11  &kp F12
 &bt BT_PRV  &bt BT_NXT  &bt BT_CLR  &trans  &trans  &sys_reset                    &CODE_COMMENT     &CODE_VIEW_SPLIT  &trans  &trans   &trans   &trans
 &trans      &trans      &trans      &trans  &trans  &trans                        &SCREENSHOT_COPY  &SCREENSHOT_SAVE  &trans  &trans   &trans   &trans
 &trans      &trans      &trans      &trans  &trans  &trans      &trans    &trans  &trans            &trans            &trans  &trans   &trans   &trans
